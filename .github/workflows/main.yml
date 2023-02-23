@@ -1,21 +1,21 @@
 name: CPSP-workshop
-on: null
-push: null
+on:
+push:
 branches:
-  - master
-jobs: null
-scan: null
+- master
+jobs:
+scan:
 runs-on: ubuntu-latest
-strategy: null
-matrix: null
-python-version: -3.8
+strategy:
+matrix:
+python-version: [3.8]
 steps:
-  - name: Checkout repo
-    uses: actions/checkout@v2
--name: Run Bridgecrew
+- name: Checkout repo
+  uses: actions/checkout@v2
+- name: Run Bridgecrew
 id: Bridgecrew
 uses: bridgecrewio/bridgecrew-action@master
-env: null
+env:
 PRISMA_API_URL: https://api3.prismacloud.io
-with: null
+with:
 api-key: ${{ secrets.BC_API_KEY }}
